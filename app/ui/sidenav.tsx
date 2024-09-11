@@ -20,6 +20,12 @@ export default function SideNav() {
           <div className={`absolute inset-y-0 left-0 w-40 bg-[#42454d] h-full pt-8 pl-2`}>
             <Link href="/" className="text-xl">
               Home
+            </Link><br/>
+            <Link href="/tools" className="text-xl">
+              Tools
+            </Link><br/>
+            <Link href="/about" className="text-xl">
+              About
             </Link>
           </div>
           : null
