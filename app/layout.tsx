@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import SideNav from "./ui/sidenav";
+import "@/app/globals.css";
+import SideNav from "@/app/ui/sidenav";
 
 // could try adding Hack font
 
