@@ -6,12 +6,14 @@ export default function Home() {
       <div>
         <p className="md:text-3xl text-center">Ling Ling Website</p>
         <p className="text-center">
-          Welcome to the Ling Ling Website. Made possible with:
+          Welcome to the Ling Ling Website. Made using:
         </p>
         <ul className="text-center">
           <li>Next.js</li>
+          <li>React</li>
+          <li>JSX</li>
+          <li>Tailwind</li>
           <li>MongoDB</li>
-          <li>etc</li>
         </ul>
         <p className="md:text-2xl text-center">Check out this stuff:</p>
       </div>
