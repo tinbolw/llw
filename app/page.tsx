@@ -19,6 +19,7 @@ export default function Home() {
       </div>
       {/* use docs for class */}
       <div className="flex flex-row justify-center items-center">
+        {/* create dynamic loading in /lib */}
         <Link href="/tools">
           <span className="text-xl">Tools</span>
         </Link>
