@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "@/app/globals.css";
 import SideNav from "@/app/ui/sidenav";
 
-// could try adding Hack font
+// could try adding Hack font, more detailed title showing route?
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-2`}
       >
         <SideNav/>
         {children}

@@ -4,18 +4,18 @@
 
 /* global text */
 a {
-  color: rgb(219, 222, 225);
+  color: #dbdee1;
 }
 
 :root {
-  --background: rgb(49, 51, 56);
-  -webkit-text-fill-color: rgb(219, 222, 225);
+  --background: #313338;
+  -webkit-text-fill-color: #dbdee1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(49, 51, 56);
-    -webkit-text-fill-color: rgb(219, 222, 225);
+    --background: #313338;
+    -webkit-text-fill-color: #dbdee1;
   }
 }
 
