@@ -9,7 +9,7 @@ import { ExpandedCard } from "@/app/ui/about/card";
 
 // create ui element for card, load bunch of cards as data
 export default function Home() {
-  // to remove
+  // instead of making toggle, make card spawn expanded and back destroy it
   const [currentlyViewingCard, toggleCard] = useState(false);
   function cardViewHandler() {
     toggleCard(!currentlyViewingCard);
