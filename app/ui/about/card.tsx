@@ -2,6 +2,7 @@
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { AboutInfo } from "@/app/lib/definitions";
+import { DateParser } from "@/app/lib/utils";
 
 // may be deprecated
 // export function ExpandedCard({ title, date, author, onClick }) {
@@ -25,12 +26,16 @@ import { AboutInfo } from "@/app/lib/definitions";
 
 export function AboutCard({  _id, editDate, title, author }: AboutInfo) {
   return (
-    <Link href={`/about/${_id}`} className="col-span-1 h-20 bg-[#3c3e45] rounded-lg border-2 hover:bg-sky-700">
+    // add undefined handling here for now
+    <Link 
+    href={`/about/${_id||undefined}`}
+    className="col-span-1 h-20 bg-[#3c3e45] rounded-lg border-2 hover:bg-sky-700"
+    >
       <div className="grid grid-cols-2 grid-rows-2 pt-1">
-        <p className="text-2xl col-span-2 text-center">{title}</p>
+        <p className="text-2xl col-span-2 text-center">{title||'undefined'}</p>
         {/* all attempts to align text bottom didnt work, pt as bandage fix */}
-        <p className="text-left pl-2 pt-2">{String(editDate)}</p>
-        <p className="text-right pr-2 pt-2">{author}</p>
+        <p className="text-left pl-2 pt-2">{DateParser(editDate)}</p>
+        <p className="text-right pr-2 pt-2">{author||'undefined'}</p>
       </div>
     </Link>
   )

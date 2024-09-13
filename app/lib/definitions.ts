@@ -9,7 +9,7 @@ export type DateInfo = {
 }
 
 export type AboutInfo = {
-  "_id"?: ObjectId;
+  "_id": ObjectId;
   editDate?: Date;
   title: string;
   description?: string;

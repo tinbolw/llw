@@ -22,8 +22,8 @@ export async function fetchAbouts() {
       .collection("about")
       .find({})
       .limit(10)
-      .toArray();
-    console.log(about);
+      .toArray() as AboutInfo[];
+    return about;
   } catch (e) {
     console.error(e);
   } finally {
@@ -38,8 +38,7 @@ export async function fetchAboutById(id: string) {
     const db = client.db("history");
     const about = await db
       .collection("about")
-      .findOne({ "_id": new ObjectId(id) });
-    console.log(about);
+      .findOne({ "_id": new ObjectId(id) }) as AboutInfo;
     return about;
   } catch (e) {
     // BSONError
