@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/globals.css";
 import SideNav from "@/app/ui/sidenav";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // could try adding Hack font, more detailed title showing route?
 
@@ -33,6 +35,8 @@ export default function RootLayout({
       >
         <SideNav/>
         {children}
+        <Analytics/>
+        <SpeedInsights/>
       </body>
     </html>
   );
