@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { SentientLink } from "@/app/ui/sentientlink";
-
+// TODO make sidenav disable self after element within is clicked
 export default function SideNav() {
   const pathName = usePathname();
   const [sideNavEnabled, toggleSideNav] = useState(false);

@@ -1,6 +1,8 @@
 "use server";
 
 import client from "@/app/lib/mongodb";
+import { ObjectId } from "mongodb";
+import { AboutInfo } from "./definitions";
 
 // import { AboutInfo, DateInfo } from "./definitions";
 // import { MongoClient } from "mongodb";
@@ -11,19 +13,38 @@ import client from "@/app/lib/mongodb";
 //   console.log("Databases:");
 //   databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 // };
-
-export async function fetchAbout() {
-  let isConnected = false;
+// fix fact that site loads multiple times and triggers multiple queries for some rzn
+export async function fetchAbouts() {
   try {
     const mongoClient = await client.connect();
-    // Send a ping to confirm a successful connection
-    await mongoClient.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!",
-    ); // because this is a server action, the console.log will be outputted to your terminal not in the browser
-    return !isConnected;
+    const db = client.db("history");
+    const about = await db
+      .collection("about")
+      .find({})
+      .limit(10)
+      .toArray();
+    console.log(about);
   } catch (e) {
     console.error(e);
-    return isConnected;
+  } finally {
+    client.close();
+  }
+}
+
+export async function fetchAboutById(id: string) {
+  // todo
+  try {
+    await client.connect();
+    const db = client.db("history");
+    const about = await db
+      .collection("about")
+      .findOne({ "_id": new ObjectId(id) });
+    console.log(about);
+    return about;
+  } catch (e) {
+    // BSONError
+    console.error(e);
+  } finally {
+    client.close();
   }
 }

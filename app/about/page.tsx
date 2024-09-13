@@ -1,21 +1,19 @@
-'use client';
-
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 //use mini icon here
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import { AboutCard } from "@/app/ui/about/card";
-import { ExpandedCard } from "@/app/ui/about/card";
-import { fetchAbout } from "../lib/actions";
+import { fetchAbouts } from "@/app/lib/actions";
+import { ObjectId } from "mongodb";
 
 // create ui element for card, load bunch of cards as data
 export default function Home() {
-  fetchAbout();
+  fetchAbouts();
   // instead of making toggle, make card spawn expanded and back destroy it
-  const [currentlyViewingCard, toggleCard] = useState(false);
-  function cardViewHandler() {
-    toggleCard(!currentlyViewingCard);
-  }
+  // const [currentlyViewingCard, toggleCard] = useState(false);
+  // function cardViewHandler() {
+  //   toggleCard(!currentlyViewingCard);
+  // }
   return (
     <main>
       <div>
@@ -40,20 +38,10 @@ export default function Home() {
         </div><br />
         <div className="grid grid-cols-4 grid-flow-row grid-rows-4 gap-2 pr-2 pl-2">
           {/* dynamically load buttons */}
-          <AboutCard title="Test1" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test2" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test3" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test4" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test5" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test6" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test7" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-          <AboutCard title="Test8" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>
-        </div>
-        {
-          // find way to pass info from aboutcard to expandedcard
-          currentlyViewingCard ?
-          <ExpandedCard title="Test" date="09/11/2024" author="tinbolw" onClick={cardViewHandler}/>:null
-        }
+          {/* add skeleton for buttons loading and pagination */}
+          {/* button click redirect to link by id */}
+          <AboutCard title="Manually Added" editDate={new Date("09/12/24")} author="tinbolw" _id={new ObjectId("66e3858cc0ab140cef1a9a26")}/>
+          </div>
       </div>
     </main>
   );
