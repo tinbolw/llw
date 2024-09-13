@@ -1,12 +1,12 @@
 // consider adding unique ids to these (mongo does create some automatically)
 export type DateInfo = {
-  date: string;
+  date: Date;
   description: string;
   author: string;
 }
 
 export type AboutInfo = {
-  editDate: string;
+  editDate: Date;
   title: string;
   description: string;
   author: string;

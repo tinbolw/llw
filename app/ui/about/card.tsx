@@ -24,6 +24,7 @@ export function AboutCard({ title, date, author, onClick }) {
   return (
     <button
       className="bg-[#3c3e45] rounded-lg col-span-1 h-20 border-2 hover:bg-sky-700"
+      // onClick={onClick}
       onClick={onClick}
     >
       <div className="grid grid-cols-2 grid-rows-2">

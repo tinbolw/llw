@@ -6,9 +6,11 @@ import { useState } from "react";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import { AboutCard } from "@/app/ui/about/card";
 import { ExpandedCard } from "@/app/ui/about/card";
+import { fetchAbout } from "../lib/actions";
 
 // create ui element for card, load bunch of cards as data
 export default function Home() {
+  fetchAbout();
   // instead of making toggle, make card spawn expanded and back destroy it
   const [currentlyViewingCard, toggleCard] = useState(false);
   function cardViewHandler() {
