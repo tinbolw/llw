@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import { fetchAboutById } from "@/app/lib/actions";
 
-// create ui element for card, load bunch of cards as data
 export default async function Home({ params }: { params: { id: string } }) {
   const id = params.id;
   const { editDate, title, description, author } = await fetchAboutById(id) || 
@@ -14,6 +13,7 @@ export default async function Home({ params }: { params: { id: string } }) {
     author: '404'
   };
   return (
+    // TODO add skeleton for loading elements
     <main>
       <div>
         <p className="md:text-3xl text-center">About</p><br />
