@@ -5,6 +5,8 @@ import { AboutPage } from "@/app/ui/about/aboutpage";
 import { AboutPageSkeleton } from "@/app/ui/skeletons";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
+// /[id]/edit lets you edit specific, /create lets you add new, add checkbox for custom time or date.now
+
 export default async function Home({ params }: { params: { id: string } }) {
   const id = params.id;
   revalidatePath(`/about/${id}`);
