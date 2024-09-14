@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center items-start">
           <h1 className="text-2xl animate-bounce">
-            Upcoming:
+            Coming Soon:
           </h1>
           <ul className="text-xl flex flex-col items-center justify-center">
             <li>
