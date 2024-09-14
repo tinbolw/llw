@@ -1,11 +1,13 @@
-import Link from "next/link";
 import { Suspense } from "react";
+import Link from "next/link";
+import { revalidatePath } from "next/cache";
 import { AboutPage } from "@/app/ui/about/aboutpage";
 import { AboutPageSkeleton } from "@/app/ui/skeletons";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 export default async function Home({ params }: { params: { id: string } }) {
   const id = params.id;
+  revalidatePath(`/about/${id}`);
   return (
     <main>
       <div className="flex justify-center space-x-2">

@@ -1,8 +1,10 @@
-import Table from "@/app/ui/about/table";
 import { Suspense } from "react";
+import { revalidatePath } from "next/cache";
 import { AboutCardsSkeleton } from "@/app/ui/skeletons";
+import Table from "@/app/ui/about/table";
 
 export default function About() {
+  revalidatePath('/about');
   // const query = searchParams?.query || '';
   // const currentPage = Number(searchParams?.page) || 1;
   // add processing for these and pagination
