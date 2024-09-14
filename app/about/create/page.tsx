@@ -6,7 +6,7 @@ export default function CreateAboutPage() {
       <h1 className="text-3xl text-center">
         About/Create
       </h1>
-      <DataTable fetch={false}/>
+      {/* <DataTable fetch={false}/> */}
     </body>
   )
 }
