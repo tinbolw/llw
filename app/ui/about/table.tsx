@@ -1,6 +1,6 @@
-import { AboutInfo } from "@/app/lib/definitions";
-import { AboutCard } from "./card";
 import { fetchAbouts } from "@/app/lib/actions";
+import { AboutInfo } from "@/app/lib/definitions";
+import { AboutCard } from "@/app/ui/about/card";
 
 export default async function Table({
   query,
@@ -23,6 +23,7 @@ export default async function Table({
             key={`${_id}`}
           />
         })
+        ??<p className="text-center col-span-4">Database Error...</p>
       }
     </div>
   )

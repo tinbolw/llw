@@ -1,35 +1,23 @@
 import Link from "next/link";
-//use mini icon here
+import { Suspense } from "react";
+import { AboutPage } from "@/app/ui/about/aboutpage";
+import { AboutPageSkeleton } from "@/app/ui/skeletons";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
-import { fetchAboutById } from "@/app/lib/actions";
 
 export default async function Home({ params }: { params: { id: string } }) {
   const id = params.id;
-  const { editDate, title, description, author } = await fetchAboutById(id) || 
-  {
-    editDate: '404',
-    title: '404',
-    description: '404',
-    author: '404'
-  };
   return (
-    // TODO add skeleton for loading elements
     <main>
-      <div>
-        <p className="md:text-3xl text-center">About</p><br />
-        <div className="flex justify-center space-x-2">
-          {/* the back button is not inline vertically with the text. */}
-          <Link href="/about">
-            <ArrowUturnLeftIcon className="size-6" />
-          </Link>
-          <p className="text-2xl">{title}</p>
-        </div>
-        <p className="text-center">
-          {`Last Edited: ${editDate} by ${author}`}
-        </p><br/>
-        <div className="text-center text-xl">
-          {description}
-        </div>
+      <div className="flex justify-center space-x-2">
+        <Link href="/about">
+          <ArrowUturnLeftIcon className="size-7" />
+        </Link>
+        <p className="md:text-3xl text-center">About</p>
+      </div>
+      <div className="text-center">
+        <Suspense fallback={<AboutPageSkeleton/>}>
+          <AboutPage params={{id:id}}/>
+        </Suspense>
       </div>
     </main>
   );

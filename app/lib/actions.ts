@@ -4,9 +4,11 @@ import client from "@/app/lib/mongodb";
 import { ObjectId } from "mongodb";
 import { AboutInfo } from "./definitions";
 
+// fix topology is closed/
+// Unchecked runtime.lastError: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
 export async function fetchAbouts() {
   try {
-    const mongoClient = await client.connect();
+    await client.connect();
     const db = client.db("history");
     const about = await db
       .collection("about")
@@ -16,11 +18,9 @@ export async function fetchAbouts() {
     return about;
   } catch (e) {
     console.error(e);
-  } finally {
-    client.close();
   }
 }
-
+//
 export async function fetchAboutById(id: string) {
   try {
     await client.connect();

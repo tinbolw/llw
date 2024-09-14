@@ -1,7 +1,8 @@
 // might need to make page not cache and refresh every time viewed
 import Table from "@/app/ui/about/table";
+import { Suspense } from "react";
+import { AboutCardsSkeleton } from "@/app/ui/skeletons";
 
-// create ui element for card, load bunch of cards as data
 export default function About() {
   // const query = searchParams?.query || '';
   // const currentPage = Number(searchParams?.page) || 1;
@@ -15,8 +16,9 @@ export default function About() {
         <div className="flex justify-center">
           <p className="text-2xl">What do you want to know about?</p>
         </div><br />
-        {/* add skeleton for buttons loading */}
-        <Table query={query} currentPage={currentPage}/>
+        <Suspense fallback={<AboutCardsSkeleton />}>
+          <Table query={query} currentPage={currentPage} />
+        </Suspense>
       </div>
     </main>
   );

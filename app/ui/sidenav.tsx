@@ -9,7 +9,6 @@ export default function SideNav() {
   // if route changes, hide sideNav
   const [changes, setChanges] = useState(0);
   useEffect(() => {
-    console.log(pathName);
     if (sideNavEnabled) sideNavHandler();
     setChanges((prev) => prev + 1);
   }, [pathName]);
