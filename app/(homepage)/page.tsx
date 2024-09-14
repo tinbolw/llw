@@ -10,7 +10,7 @@ export default function Home() {
         </p><br />
         {/* <p className="md:text-2xl text-center">Check out this stuff:</p> */}
       </div>
-      <div className="flex justify-around">
+      <div className="flex justify-around items-start">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-2xl">
             You can:
@@ -23,7 +23,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center items-start">
           <h1 className="text-2xl animate-bounce">
             Upcoming:
           </h1>
