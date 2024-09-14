@@ -1,4 +1,3 @@
-// might need to make page not cache and refresh every time viewed
 import Table from "@/app/ui/about/table";
 import { Suspense } from "react";
 import { AboutCardsSkeleton } from "@/app/ui/skeletons";

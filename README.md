@@ -9,3 +9,4 @@ TODO
   Cooler embed
   add admin panel to insert documents (possibly in dev only?)
   load type from def and autocreate places to enter data
+  search for aboutpage
