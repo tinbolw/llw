@@ -1,8 +1,9 @@
 'use client';
+// TODO add user and user image and logout to sidenav, pass session info in props?
 import { useState, useEffect } from "react";
-import { Bars3Icon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { SentientLink } from "@/app/ui/sentientlink";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 // consider adding discord palette colors to a config to be referenced
 export default function SideNav() {
   const pathName = usePathname();
