@@ -1,12 +1,11 @@
 import { Suspense } from "react";
-import { revalidatePath } from "next/cache";
-import Link from "next/link";
-import { buttonTypes } from "@/app/ui/frequent";
-import { AboutCardsSkeleton } from "@/app/ui/skeletons";
-import Table from "@/app/ui/about/table";
 import { auth } from "@/auth";
-
-
+import Link from "next/link";
+import { revalidatePath } from "next/cache";
+// import Search from "@/app/ui/search";
+import Table from "@/app/ui/about/table";
+import { AboutCardsSkeleton } from "@/app/ui/skeletons";
+import { buttonTypes } from "@/app/ui/frequent";
 
 export default async function About() {
   const session = await auth();
@@ -23,6 +22,7 @@ export default async function About() {
         <div className="flex justify-center">
           <p className="text-2xl">What do you want to know about?</p>
         </div><br />
+        {/* <Search/> */}
         <Suspense fallback={<AboutCardsSkeleton />}>
           <Table query={query} currentPage={currentPage} />
         </Suspense>
