@@ -9,7 +9,7 @@ export default async function Table({
   query: string;
   currentPage: number;
 }) {
-  const abouts = await fetchAbouts();
+  const abouts = await fetchAbouts(query);
   return (
     <div className="grid grid-cols-4 grid-flow-row grid-rows-4 gap-2 pr-2 pl-2">
       {

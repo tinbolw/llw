@@ -8,15 +8,18 @@ import client from "@/app/lib/mongodb";
 import { AboutInfo } from "@/app/lib/definitions";
 import { redirect } from "next/navigation";
 
-// fix topology is closed/
-// Unchecked runtime.lastError: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
-export async function fetchAbouts() {
+export async function fetchAbouts(query?:string) {
   try {
     await client.connect();
     const db = client.db("history");
+    // deletes index
+    // console.log(await db.collection("about").dropIndex("title_text"));
+    // creates index
+    // db.collection("about").createIndex({ title: "text", description: "text", editDate: "text", author: "text" });
     const about = await db
       .collection("about")
-      .find({})
+      // .find "creates cursor, may need to call client.close or something"
+      .find(query?{ $text: { $search: query } }:{})
       .limit(8)
       .toArray() as AboutInfo[];
     return about;

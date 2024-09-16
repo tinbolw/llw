@@ -2,19 +2,27 @@ import { Suspense } from "react";
 import { auth } from "@/auth";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
-// import Search from "@/app/ui/search";
+import Search from "@/app/ui/search";
 import Table from "@/app/ui/about/table";
 import { AboutCardsSkeleton } from "@/app/ui/skeletons";
 import { buttonTypes } from "@/app/ui/frequent";
 
-export default async function About() {
+// fix scaling on smaller screens
+export default async function About({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
   const session = await auth();
   revalidatePath('/about');
-  // const query = searchParams?.query || '';
-  // const currentPage = Number(searchParams?.page) || 1;
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
   // add processing for these and pagination
-  const query = '';
-  const currentPage = 1;
+  // const query = '';
+  // const currentPage = 1;
   return (
     <main>
       <div>
@@ -22,8 +30,11 @@ export default async function About() {
         <div className="flex justify-center">
           <p className="text-2xl">What do you want to know about?</p>
         </div><br />
-        {/* <Search/> */}
-        <Suspense fallback={<AboutCardsSkeleton />}>
+        {/* if no placeholder from url params, use "Search" */}
+        <div className="flex justify-center">
+          <Search placeholder="Search"/>
+        </div><br/>
+        <Suspense key={query + currentPage} fallback={<AboutCardsSkeleton />}>
           <Table query={query} currentPage={currentPage} />
         </Suspense>
         {
