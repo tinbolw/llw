@@ -7,7 +7,5 @@ TODO
   Date Browser
   Timeline?
   Cooler embed
-  add admin panel to insert documents (possibly in dev only?)
-  load type from def and autocreate places to enter data
-  search for aboutpage
+  add admin panel to delete documents (possibly in dev only?)
   overengineered homepage (big bold text has image as background, zoom in, etc)

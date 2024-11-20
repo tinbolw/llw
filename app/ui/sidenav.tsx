@@ -27,13 +27,15 @@ export default function SideNav() {
       </button>
       {
         sideNavEnabled ?
-          <div className={`absolute inset-y-0 left-0 w-40 bg-[#2B2D31] h-full pt-10 pl-2`}>
-            {/* more dynamic way to add the > indicator */}
-            <SentientLink href="/" label="Home" className="text-xl"/><br/>
-            <SentientLink href="/about" label="About" className="text-xl"/><br/>
-            <SentientLink href="/login" label="Login" className="text-xl"/>
-          </div>
-          : null
+            <div className={`absolute inset-y-0 left-0 w-40 bg-[#2B2D31] h-full pt-10 pl-2`}>
+              {/* more dynamic way to add the > indicator */}
+              <SentientLink href="/" label="Home" className="text-xl"/><br/>
+              <SentientLink href="/about" label="About" className="text-xl"/><br/>
+              <SentientLink href="/statistics" label="Server Stats" className="text-xl"/><br/>
+              <SentientLink href="/jit" label="Jit" className="text-xl"/><br/>
+              <SentientLink href="/login" label="Login" className="text-xl"/>
+            </div>
+            : null
       }
     </div>
   )

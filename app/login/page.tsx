@@ -1,12 +1,13 @@
 import { auth } from "@/auth";
 import {GoogleSignOut, GoogleSignIn} from "@/app/ui/google-auth";
+import { Header } from "@/app/ui/common"
 
 export default async function Login() {
   const session = await auth();
   return (
     <main>
+        <Header pageTitle="Login"/>
       <div className="flex flex-col">
-        <h1 className="md:text-3xl text-center">Login</h1>
         <p className="text-center">
           Unless you have access, there is nothing to see here.
         </p><br />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AboutInfo } from "@/app/lib/definitions";
 import { dateToString } from "@/app/lib/utils";
-import { buttonTypes } from "@/app/ui/frequent";
+import { buttonTypes } from "@/app/ui/common";
 
 export function AboutCard({  _id, editDate, title, author }: AboutInfo) {
   return (

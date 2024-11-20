@@ -1,5 +1,5 @@
 import { signIn, signOut } from "@/auth"
-import { buttonTypes } from "@/app/ui/frequent"
+import { buttonTypes } from "@/app/ui/common"
  
 export function GoogleSignIn() {
   return (

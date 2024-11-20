@@ -2,10 +2,11 @@ import { Suspense } from "react";
 import { auth } from "@/auth";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
+
 import Search from "@/app/ui/search";
 import Table from "@/app/ui/about/table";
 import { AboutCardsSkeleton } from "@/app/ui/skeletons";
-import { buttonTypes } from "@/app/ui/frequent";
+import { Header, buttonTypes } from "@/app/ui/common";
 
 // fix scaling on smaller screens
 export default async function About({
@@ -25,8 +26,8 @@ export default async function About({
   // const currentPage = 1;
   return (
     <main>
+      <Header pageTitle="About"/>
       <div>
-        <p className="md:text-3xl text-center">About</p><br />
         <div className="flex justify-center">
           <p className="text-2xl">What do you want to know about?</p>
         </div><br />

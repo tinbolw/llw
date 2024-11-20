@@ -1,4 +1,4 @@
-import { textInputTypes, buttonTypes } from "@/app/ui/frequent";
+import { textInputTypes, buttonTypes } from "@/app/ui/common";
 import { createOrEditAbout } from "@/app/lib/actions";
 import { fetchAboutById } from "@/app/lib/actions";
 

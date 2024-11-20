@@ -2,7 +2,7 @@
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
-import { textInputTypes } from "@/app/ui/frequent";
+import { textInputTypes } from "@/app/ui/common";
  
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();

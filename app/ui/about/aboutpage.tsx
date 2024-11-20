@@ -1,6 +1,6 @@
 import { fetchAboutById } from "@/app/lib/actions"
 import { auth } from "@/auth";
-import { buttonTypes } from "@/app/ui/frequent";
+import { buttonTypes } from "@/app/ui/common";
 import Link from "next/link";
 
 export async function AboutPage({ params }: { params: { id: string } }) {
