@@ -9,18 +9,12 @@ import { AboutCardsSkeleton } from "@/app/ui/skeletons";
 import { Header, buttonTypes } from "@/app/ui/common";
 
 // fix scaling on smaller screens
-export default async function About({
-  searchParams,
-}: {
-  searchParams?: {
-    query?: string;
-    page?: string;
-  };
-}) {
+type SearchParams = Promise<{ query?: string; page?: string; }>
+export default async function About(props:{searchParams:SearchParams}) {
+  const searchParams = await props.searchParams;
   const session = await auth();
   // todo fix revalidations for /about
   // revalidatePath('/about');
-  // todo SHOULD BE AWAITED
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
   // add processing for these and pagination
