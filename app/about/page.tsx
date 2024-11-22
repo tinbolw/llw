@@ -18,7 +18,9 @@ export default async function About({
   };
 }) {
   const session = await auth();
-  revalidatePath('/about');
+  // todo fix revalidations for /about
+  // revalidatePath('/about');
+  // todo SHOULD BE AWAITED
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
   // add processing for these and pagination

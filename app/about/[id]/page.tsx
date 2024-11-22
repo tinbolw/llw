@@ -9,7 +9,7 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 export default async function Home({ params }: { params: { id: string } }) {
   const id = params.id;
-  revalidatePath(`/about/${id}`);
+  // revalidatePath(`/about/${id}`);
   return (
     <main>
       <div className="flex justify-center space-x-2">
