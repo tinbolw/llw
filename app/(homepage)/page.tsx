@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
+    // todo add dev tag
     <main>
       <div>
         <p className="md:text-3xl text-center">Ling Ling Website</p>

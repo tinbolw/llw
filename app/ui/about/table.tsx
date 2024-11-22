@@ -1,4 +1,4 @@
-import { fetchAbouts } from "@/app/lib/actions";
+import { fetchAbouts } from "@/app/lib/api/mongodb/mongo-actions";
 import { AboutInfo } from "@/app/lib/definitions";
 import { AboutCard } from "@/app/ui/about/card";
 

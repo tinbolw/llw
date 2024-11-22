@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "LLW",
   description: "Ling Ling Website",
 };
-
+// todo add general padding for all links?
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -1,4 +1,4 @@
-import { fetchAboutById } from "@/app/lib/actions"
+import { fetchAboutById } from "@/app/lib/api/mongodb/mongo-actions"
 import { auth } from "@/auth";
 import { buttonTypes } from "@/app/ui/common";
 import Link from "next/link";

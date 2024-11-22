@@ -9,28 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.1.5",
-    "@vercel/analytics": "^1.3.1",
-    "@vercel/speed-insights": "^1.0.12",
+    "@google/generative-ai": "^0.21.0",
+    "@heroicons/react": "^2.2.0",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "bcrypt": "^5.1.1",
     "child_process": "^1.0.2",
-    "mongodb": "^6.9.0",
+    "mongodb": "^6.10.0",
     "net": "^1.0.2",
-    "next": "14.2.11",
+    "next": "15.0.3",
     "next-auth": "5.0.0-beta.20",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "use-debounce": "^10.0.3",
+    "use-debounce": "^10.0.4",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^20.16.5",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.8",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.11",
-    "typescript": "^5.6.2"
+    "@types/node": "^22.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^9.15.0",
+    "eslint-config-next": "15.0.3",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
   }
 }

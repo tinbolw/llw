@@ -22,6 +22,7 @@ export default async function Home({ params }: { params: { id: string } }) {
         <Suspense fallback={<AboutPageSkeleton/>}>
           <AboutPage params={{id:id}}/>
         </Suspense>
+      {/*add side text padding*/}
       </div>
     </main>
   );

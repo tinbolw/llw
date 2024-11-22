@@ -1,6 +1,6 @@
 import { textInputTypes, buttonTypes } from "@/app/ui/common";
-import { createOrEditAbout } from "@/app/lib/actions";
-import { fetchAboutById } from "@/app/lib/actions";
+import { createOrEditAbout } from "@/app/lib/api/mongodb/mongo-actions";
+import { fetchAboutById } from "@/app/lib/api/mongodb/mongo-actions";
 
 export async function DataTable({ id }: { id: string }) {
   // prefetch data, 'id' for edit, '' for create

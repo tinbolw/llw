@@ -3,8 +3,7 @@
 
 import { ObjectId } from "mongodb";
 import { z } from "zod";
-import { stringToDate } from "@/app/lib/utils";
-import client from "@/app/lib/mongodb";
+import client from "@/app/lib/api/mongodb/mongodb";
 import { AboutInfo } from "@/app/lib/definitions";
 import { redirect } from "next/navigation";
 
@@ -16,13 +15,12 @@ export async function fetchAbouts(query?:string) {
     // console.log(await db.collection("about").dropIndex("title_text"));
     // creates index
     // db.collection("about").createIndex({ title: "text", description: "text", editDate: "text", author: "text" });
-    const about = await db
+    return await db
       .collection("about")
       // .find "creates cursor, may need to call client.close or something"
       .find(query?{ $text: { $search: query } }:{})
       .limit(8)
       .toArray() as AboutInfo[];
-    return about;
   } catch (e) {
     console.error(e);
   }
@@ -32,10 +30,9 @@ export async function fetchAboutById(id: string) {
   try {
     await client.connect();
     const db = client.db("history");
-    const about = await db
+    return await db
       .collection("about")
       .findOne({ "_id": new ObjectId(id) }) as AboutInfo;
-    return about;
   } catch (e) {
     // BSONError if invalid id type, null if nonexistent
     console.error(e);
@@ -105,7 +102,7 @@ export async function createOrEditAbout(formData: FormData) {
     const db = client.db("history");
     await db
       .collection('about')
-      // does go through if id is null, figure out how to supress
+      // does go through if id is null, figure out how to suppress
       .updateOne({"_id": new ObjectId(id)}, { $set:{editDate, title, description, author} }, {upsert:true});
     return;
   } catch (e) {

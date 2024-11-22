@@ -12,7 +12,7 @@ export function AboutCard({  _id, editDate, title, author }: AboutInfo) {
     >
       <div className="grid grid-cols-2 grid-rows-2 pt-1">
         <p className="text-2xl col-span-2 text-center">{title||'undefined'}</p>
-        {/* all attempts to align text bottom didnt work, pt as bandage fix */}
+        {/* all attempts to align text bottom didn't work, pt as bandage fix */}
         <p className="text-left pl-2 pt-2">{dateToString(editDate)}</p>
         <p className="text-right pr-2 pt-2">{author||'undefined'}</p>
       </div>
