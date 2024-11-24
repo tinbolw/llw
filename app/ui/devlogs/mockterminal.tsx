@@ -28,7 +28,8 @@ export default function MockTerminal({user, command, commandResult}: { user: str
                 <p>
                     {`${user}@llw > `}
                 </p>
-                <Typewriter text={command}/>
+                <p>{command}</p>
+                {/*<Typewriter text={command}/>*/}
             </div>
             {
                 descriptionHidden ? null : <div><br/>

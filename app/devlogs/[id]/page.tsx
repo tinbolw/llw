@@ -17,7 +17,6 @@ export default async function Devlog(props: { params: Params }) {
         <main>
             <Header pageTitle={`Devlogs/${title}`}/>
             <div className="flex flex-col items-center justify-center">
-                {/*todo fix this yelling*/}
                 <MockTerminal user={author} command={`cat ${id}.json`} commandResult={description} />
             </div>
         </main>
