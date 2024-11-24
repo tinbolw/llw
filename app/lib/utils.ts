@@ -1,16 +1,18 @@
-
-// returns a date in mm/dd/YYYY format, PST/PDT
-export function dateToString(date: Date | undefined) {
-  //return string
-  return date === undefined ? 'undefined' : date.toLocaleDateString('en-US', { timeZone: 'America/Los_Angeles' });
+/**
+ * Returns a String representation of a Date object in mm/dd/YYYY format, PST/PDT
+ * @param date
+ * @param time Include the time of the Date object in the string?
+ * @return String
+ */
+// todo split date and time to have more formatting options?
+export function dateToString(date: Date, time?:boolean) {
+  const options:Intl.DateTimeFormatOptions = {
+    timeZone: 'America/Los_Angeles',
+    hour12: false,
+    hour: time?'2-digit':undefined,
+    minute: time?'2-digit':undefined,
+    second: time?'2-digit':undefined
+  };
+  return date.toLocaleDateString('en-US', options);
 }
 
-// export function stringToDate(string: string | undefined) {
-//   //return Date
-//   if (!string) return undefined;
-//   try {
-//     return new Date(string);
-//   } catch (e) {
-//     return 'Invalid Date';
-//   }
-// }

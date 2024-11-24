@@ -8,7 +8,9 @@ import {ArrowUturnLeftIcon} from "@heroicons/react/24/solid";
 // /[id]/edit lets you edit specific, /create lets you add new, add checkbox for custom time or date.now
 
 type Params = Promise<{ id: string }>;
-export default async function Home(props: { params: Params }) {
+// i was wondering if passing all of the about info as props to this page and rendering it statically would save api
+// fetches, but i dont think thats a good idea
+export default async function About(props: { params: Params }) {
     const params = await props.params;
     const id = params.id;
     // revalidatePath(`/about/${id}`);

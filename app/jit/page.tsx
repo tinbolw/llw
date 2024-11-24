@@ -1,7 +1,7 @@
 import { Header } from "@/app/ui/common";
 import Link from "next/link"
 
-export default async function Home() {
+export default async function Jit() {
     return (
         <main>
             <Header pageTitle="Jit"/>

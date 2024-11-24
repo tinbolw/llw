@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { AboutInfo } from "@/app/lib/definitions";
+import { AboutDocument } from "@/app/lib/definitions";
 import { dateToString } from "@/app/lib/utils";
 import { buttonTypes } from "@/app/ui/common";
 
-export function AboutCard({  _id, editDate, title, author }: AboutInfo) {
+export function AboutCard({  _id, editDate, title, author }: AboutDocument) {
   return (
     // add undefined handling here for now
     <Link 

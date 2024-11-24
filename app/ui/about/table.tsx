@@ -1,6 +1,6 @@
 import { fetchAbouts } from "@/app/lib/api/mongodb/mongo-actions";
-import { AboutInfo } from "@/app/lib/definitions";
-import { AboutCard } from "@/app/ui/about/card";
+import { AboutDocument } from "@/app/lib/definitions";
+import { AboutCard } from "@/app/ui/about/aboutcard";
 
 export default async function Table({
   query,
@@ -13,7 +13,7 @@ export default async function Table({
   return (
     <div className="grid grid-cols-4 grid-flow-row grid-rows-4 gap-2 pr-2 pl-2">
       {
-        abouts?.map(({ _id, editDate, title, description, author }: AboutInfo) => {
+        abouts?.map(({ _id, editDate, title, description, author }: AboutDocument) => {
           return <AboutCard
             _id={_id}
             editDate={editDate}

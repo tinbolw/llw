@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import BackPageButton from "@/app/ui/client/backpagebutton";
 //consider also making default page builder here or adding that to layout
 
+/**
+ * Common header element containing a simple title and back button.
+ * @param pageTitle The title of the page.
+ * @constructor
+ */
 export function Header({ pageTitle }: { pageTitle: string }) {
   return (
     <div className="flex justify-center space-x-2">
-      {/*  the buttons a bit too high, fix later*/}
-      {/*  todo make the href actually go one back instead of always redirecting home*/}
-      <Link href="/">
-        <ArrowUturnLeftIcon className="size-7" />
-      </Link>
+      <BackPageButton/>
       <p className="md:text-3xl text-center">{pageTitle}</p>
     </div>
   );

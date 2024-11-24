@@ -9,6 +9,8 @@ import { AboutCardsSkeleton } from "@/app/ui/skeletons";
 import { Header, buttonTypes } from "@/app/ui/common";
 
 // fix scaling on smaller screens
+// todo it seems as if page loading itself depends on the fetch, which is what suspense is supposed to prevent, look into this
+// todo instead of making the entire page itself await the props, load rest of the site and suspense the cards
 type SearchParams = Promise<{ query?: string; page?: string; }>
 export default async function About(props:{searchParams:SearchParams}) {
   const searchParams = await props.searchParams;

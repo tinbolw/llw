@@ -1,7 +1,7 @@
 // "use server";
 
 import { auth } from "@/auth";
-import { DataTable } from "@/app/ui/about/data-table";
+import { AboutTable } from "@/app/ui/about/abouttable";
 import {Header} from "@/app/ui/common";
 
 export default async function CreateAboutPage() {
@@ -10,7 +10,7 @@ export default async function CreateAboutPage() {
     return (
       <div>
           <Header pageTitle="About/Create"/>
-        <DataTable id="" />
+        <AboutTable id="" />
       </div>
     )
   } else {

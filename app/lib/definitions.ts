@@ -1,17 +1,24 @@
-// todo better type names
 import { ObjectId } from "mongodb";
 
-export type DateInfo = {
+// export type DateInfo = {
+//   "_id": ObjectId;
+//   date: Date;
+//   description: string;
+//   author: string;
+// }
+
+export type AboutDocument = {
   "_id": ObjectId;
-  date: Date;
+  editDate: Date;
+  title: string;
   description: string;
   author: string;
 }
 
-export type AboutInfo = {
+export type DevlogDocument = {
   "_id": ObjectId;
   editDate: Date;
   title: string;
-  description?: string;
-  author?: string;
+  description: string;
+  author: string;
 }

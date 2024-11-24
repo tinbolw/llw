@@ -9,7 +9,6 @@ export default function Home() {
         <p className="text-center">
           Welcome to the Ling Ling Website.
         </p><br />
-        {/* <p className="md:text-2xl text-center">Check out this stuff:</p> */}
       </div>
       <div className="flex justify-around items-start">
         <div className="flex flex-col items-center justify-center">
@@ -22,21 +21,34 @@ export default function Home() {
                 Read some Abouts
               </Link>
             </li>
+            <li>
+              <Link href="/jit/jitbot">
+                Talk to Jitbot
+              </Link>
+            </li>
+            <li>
+              <Link href="/devlogs">
+                Read the devlogs
+              </Link>
+            </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center items-start">
+        <div className="flex flex-col items-center justify-center">
           <h1 className="text-2xl animate-bounce">
             Coming Soon:
           </h1>
           <ul className="text-xl flex flex-col items-center justify-center">
             <li>
-              Date Browser
+              Server Statistics
+            </li>
+            <li>
+              Jit definitions
+            </li>
+            <li>
+              Date Browser?
             </li>
             <li>
               Timeline?
-            </li>
-            <li>
-              Server Statistics
             </li>
           </ul>
         </div>

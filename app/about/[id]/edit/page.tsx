@@ -2,7 +2,7 @@
 
 import {auth} from "@/auth";
 
-import {DataTable} from "@/app/ui/about/data-table";
+import {AboutTable} from "@/app/ui/about/abouttable";
 import {Header} from "@/app/ui/common";
 
 type Params = Promise<{ id: string }>;
@@ -13,7 +13,7 @@ export default async function EditAboutPage(props: {params: Params}) {
         return (
             <div>
                 <Header pageTitle="About/Edit"/>
-                <DataTable id={params.id}/>
+                <AboutTable id={params.id}/>
             </div>
         )
     } else {

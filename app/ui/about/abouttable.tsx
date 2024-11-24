@@ -1,16 +1,17 @@
+import { AboutDocument } from "@/app/lib/definitions";
 import { textInputTypes, buttonTypes } from "@/app/ui/common";
 import { createOrEditAbout } from "@/app/lib/api/mongodb/mongo-actions";
-import { fetchAboutById } from "@/app/lib/api/mongodb/mongo-actions";
+import { fetchDocumentById } from "@/app/lib/api/mongodb/mongo-actions";
 
-export async function DataTable({ id }: { id: string }) {
+export async function AboutTable({ id }: { id: string }) {
   // prefetch data, 'id' for edit, '' for create
   const defaultData = { editDate: '', title: '', description: '', author: '' };
   const { editDate, title, description, author } =
-    id ? await fetchAboutById(id) ?? defaultData : defaultData;
+    id ? await fetchDocumentById<AboutDocument>(id, "history", "about") ?? defaultData : defaultData;
   // parse date object into RFC3339 format for date defaultValue
   const autoDate = (new Date(editDate == '' ? Date.now() : editDate).toISOString()).substring(0, 10);
   return (
-    // need use client
+    // need use client?
     // disable date by default
     // changestate on checkbox, if on, disable date, if off, enable date
     <form className="flex flex-col justify-center items-center" action={createOrEditAbout}>
