@@ -17,7 +17,7 @@
     "child_process": "^1.0.2",
     "mongodb": "^6.10.0",
     "net": "^1.0.2",
-    "next": "15.5.9",
+    "next": "16.1.5",
     "next-auth": "5.0.0-beta.30",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
