@@ -1,32 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* global text */
 a {
-  color: #dbdee1;
+    color: #dbdee1;
 }
 
 :root {
-  --background: #313338;
-  -webkit-text-fill-color: #dbdee1;
+    --background: #313338;
+    -webkit-text-fill-color: #dbdee1;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #313338;
-    -webkit-text-fill-color: #dbdee1;
-  }
+    :root {
+        --background: #313338;
+        -webkit-text-fill-color: #dbdee1;
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
