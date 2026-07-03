@@ -8,20 +8,15 @@ export default async function Login() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-  if (session) console.log(await inGuild());
+  const authorized = session ? await inGuild() : false;
   return (
     <main>
       <Header pageTitle="Login" />
-      <div className="flex flex-col">
-        <p className="text-center">
-          Unless you have access, there is nothing to see here.
-        </p>
-        <br />
-      </div>
       <div className="flex flex-col items-center justify-center">
         {session ? (
           <div className="flex flex-col items-center">
-            Signed in as {session.user.email}.
+            Signed in as {session.user.name}. You are {authorized ? "" : "not"}{" "}
+            authorized.
             <Link href="/account/logout">Sign out</Link>
           </div>
         ) : (

@@ -14,7 +14,7 @@ async function getGuilds() {
     headers: await headers(),
   });
 
-  if (!session) return null;
+  if (!session) return [];
 
   const tokenData = await auth.api.getAccessToken({
     body: {
@@ -24,7 +24,7 @@ async function getGuilds() {
     headers: await headers(),
   });
 
-  if (!tokenData?.accessToken) return null;
+  if (!tokenData?.accessToken) return [];
 
   const endpoint = "https://discord.com/api/v10/users/@me/guilds";
   const response = await fetch(endpoint, {
@@ -33,7 +33,7 @@ async function getGuilds() {
     },
   });
 
-  if (!response.ok) return null;
+  if (!response.ok) return [];
 
   return await response.json();
 }
