@@ -4,7 +4,7 @@ import { Redirecting } from "@/app/ui/redirecting";
 
 export default function Page() {
   authClient.signIn.social({
-    provider: "google",
+    provider: "discord",
     callbackURL: "/account",
   });
   return <Redirecting />;
