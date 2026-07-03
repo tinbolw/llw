@@ -15,8 +15,10 @@ export default async function Login() {
       <div className="flex flex-col items-center justify-center">
         {session ? (
           <div className="flex flex-col items-center">
-            Signed in as {session.user.name}. You are {authorized ? "" : "not"}{" "}
-            authorized.
+            Signed in as {session.user.name}. You are{" "}
+            {authorized
+              ? "cleared to access this website, as a member of Ling Ling."
+              : "not authorized."}
             <Link href="/account/logout">Sign out</Link>
           </div>
         ) : (
