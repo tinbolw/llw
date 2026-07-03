@@ -12,7 +12,7 @@ export default function Page() {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          router.push("/");
+          router.refresh(); // Invalidate client-side router cache
           router.push("/account");
         },
       },
