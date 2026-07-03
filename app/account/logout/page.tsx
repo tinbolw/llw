@@ -13,6 +13,7 @@ export default function Page() {
       fetchOptions: {
         onSuccess: () => {
           router.push("/");
+          router.push("/account");
         },
       },
     });
