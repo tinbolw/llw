@@ -1,14 +1,14 @@
 import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { Header } from "@/app/ui/common";
-import { inGuild } from "../lib/discord/discord-actions";
+import { isAuthorized } from "@/app/lib/session";
 import Link from "next/link";
 
 export default async function Login() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-  const authorized = session ? await inGuild() : false;
+  const authorized = await isAuthorized(session?.user.name ?? "");
   return (
     <main>
       <Header pageTitle="Login" />

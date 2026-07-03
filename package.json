@@ -16,6 +16,7 @@
     "bcrypt": "^6.0.0",
     "better-auth": "^1.6.23",
     "child_process": "^1.0.2",
+    "ioredis": "^5.11.1",
     "mongodb": "^7.4.0",
     "net": "^1.0.2",
     "next": "16.2.10",
