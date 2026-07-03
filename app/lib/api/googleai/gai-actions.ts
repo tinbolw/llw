@@ -5,7 +5,7 @@ import { systemInstruction } from "@/app/lib/api/googleai/systemInstruction";
 
 const ai = new GoogleGenAI({});
 
-export async function askJit(prompt: string): Promise<String> {
+export async function askJit(prompt: string): Promise<string> {
   const interaction = await ai.interactions.create({
     model: "gemini-3.5-flash",
     input: prompt,

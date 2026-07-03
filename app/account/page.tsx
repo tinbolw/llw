@@ -7,7 +7,6 @@ export default async function Login() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-  console.log(session);
   return (
     <main>
       <Header pageTitle="Login" />
