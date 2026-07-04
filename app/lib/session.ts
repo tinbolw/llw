@@ -1,3 +1,5 @@
+"use server";
+
 import { inGuild } from "./discord/discord-actions";
 import Redis from "ioredis";
 
@@ -16,4 +18,8 @@ export async function isAuthorized(username: string): Promise<boolean> {
   const result = await inGuild();
   await redis.set(cacheKey, String(result), "EX", TTL_SECONDS);
   return result;
+}
+
+export async function deleteSession(username: string) {
+  await redis.del(`guild-member:${username}`);
 }

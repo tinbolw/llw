@@ -2,7 +2,7 @@
 import { authClient } from "@/app/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { Redirecting } from "@/app/ui/redirecting";
-import { deleteSession } from "@/app/lib/delsession";
+import { deleteSession } from "@/app/lib/session";
 
 export default function Page() {
   const router = useRouter();

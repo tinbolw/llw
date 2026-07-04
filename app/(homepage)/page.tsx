@@ -19,6 +19,9 @@ export default function Home() {
             <li>
               <Link href="/devlogs">Read the devlogs</Link>
             </li>
+            <li>
+              <Link href="/account">View your account</Link>
+            </li>
           </ul>
         </div>
         <div className="flex flex-col items-center justify-center">
