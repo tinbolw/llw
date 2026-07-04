@@ -1,16 +1,14 @@
-import { Header } from "@/app/ui/common";
-import Link from "next/link"
+import { TitledPage } from "@/app/ui/titledpage";
+import Link from "next/link";
 
-export default async function Jit() {
-    return (
-        <main>
-            <Header pageTitle="Jit"/>
-            <div className="flex justify-center">
-                <Link href="/jit/jitbot" className="text-2xl underline">
-                    Jitbot
-                </Link>
-            </div>
-            <p className="text-2xl text-center">Definitions soon...</p>
-        </main>
-    );
+export default async function Page() {
+  const title = "Jit";
+  const description = "Definitions soon...";
+  return (
+    <TitledPage
+      title={title}
+      description={description}
+      backButton={true}
+    ></TitledPage>
+  );
 }

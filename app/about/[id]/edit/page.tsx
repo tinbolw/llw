@@ -3,16 +3,18 @@
 import { auth } from "@/auth";
 
 import { AboutTable } from "@/app/ui/about/abouttable";
-import { Header } from "@/app/ui/common";
+import { TitledPage } from "@/app/ui/titledpage";
 
 type Params = Promise<{ id: string }>;
-export default async function EditAboutPage(props: { params: Params }) {
+export default async function Page(props: { params: Params }) {
+  const title = "About/Edit";
   const params = await props.params;
   if (false) {
     return (
       <div>
-        <Header pageTitle="About/Edit" />
-        <AboutTable id={params.id} />
+        <TitledPage title={title}>
+          <AboutTable id={params.id} />
+        </TitledPage>
       </div>
     );
   } else {

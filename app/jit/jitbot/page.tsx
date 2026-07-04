@@ -1,10 +1,11 @@
 "use client";
 
-import { Header, textInputTypes, buttonTypes } from "@/app/ui/common";
+import { textInputTypes, buttonTypes } from "@/app/ui/common";
 import { useState } from "react";
 import { askJit } from "@/app/lib/api/googleai/gai-actions";
+import { TitledPage } from "@/app/ui/titledpage";
 
-export default function Home() {
+export default function Page() {
   const [prompt, setPrompt] = useState("");
   const [result, setResult] = useState("");
 
@@ -14,12 +15,10 @@ export default function Home() {
     setResult(await askJit(prompt));
   }
 
+  const title = "Jitbot";
+  const description = "Ask Jitbot jit!";
   return (
-    <main>
-      {/*todo instead of using form, maybe make function get data from textbot and return, then use response to edit field*/}
-      <Header pageTitle="Jitbot" />
-      <p className="flex justify-center md:text-2xl">Ask Jitbot jit!</p>
-      <br />
+    <TitledPage title={title} description={description} backButton={true}>
       <div className="flex flex-col justify-center items-center">
         <textarea
           id="response"
@@ -47,6 +46,6 @@ export default function Home() {
           Ask
         </button>
       </div>
-    </main>
+    </TitledPage>
   );
 }

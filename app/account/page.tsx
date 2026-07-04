@@ -1,17 +1,17 @@
 import { auth } from "@/auth";
 import { headers } from "next/headers";
-import { Header } from "@/app/ui/common";
 import { isAuthorized } from "@/app/lib/session";
 import Link from "next/link";
+import { TitledPage } from "../ui/titledpage";
 
-export default async function Login() {
+export default async function Page() {
+  const title = "Login";
   const session = await auth.api.getSession({
     headers: await headers(),
   });
   const authorized = await isAuthorized(session?.user.name ?? "");
   return (
-    <main>
-      <Header pageTitle="Login" />
+    <TitledPage title={title} backButton={true}>
       <div className="flex flex-col items-center justify-center">
         {session ? (
           <div className="flex flex-col items-center">
@@ -25,6 +25,6 @@ export default async function Login() {
           <Link href="/account/login">Sign in with Discord</Link>
         )}
       </div>
-    </main>
+    </TitledPage>
   );
 }

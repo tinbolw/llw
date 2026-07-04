@@ -5,8 +5,6 @@ import SideNav from "@/app/ui/client/sidenav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
-// could try adding Hack font, more detailed title showing route?
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -22,7 +20,7 @@ export const metadata: Metadata = {
   title: "LLW",
   description: "Ling Ling Website",
 };
-// todo add general padding for all links?
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,10 +31,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-2`}
       >
-        <SideNav/>
+        <SideNav />
         {children}
-        <Analytics/>
-        <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

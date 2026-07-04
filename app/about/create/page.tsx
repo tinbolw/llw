@@ -2,14 +2,16 @@
 
 import { auth } from "@/auth";
 import { AboutTable } from "@/app/ui/about/abouttable";
-import { Header } from "@/app/ui/common";
+import { TitledPage } from "@/app/ui/titledpage";
 
 export default async function CreateAboutPage() {
+  const title = "About/Create";
   if (false) {
     return (
       <div>
-        <Header pageTitle="About/Create" />
-        <AboutTable id="" />
+        <TitledPage title={title}>
+          <AboutTable id="" />
+        </TitledPage>
       </div>
     );
   } else {

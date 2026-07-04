@@ -2,11 +2,12 @@ import { Suspense } from "react";
 import { auth } from "@/auth";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
+import { TitledPage } from "@/app/ui/titledpage";
 
 import Search from "@/app/ui/search";
 import Table from "@/app/ui/about/table";
 import { AboutCardsSkeleton } from "@/app/ui/skeletons";
-import { Header, buttonTypes } from "@/app/ui/common";
+import { buttonTypes } from "@/app/ui/common";
 
 // fix scaling on smaller screens
 // todo it seems as if page loading itself depends on the fetch, which is what suspense is supposed to prevent, look into this
@@ -21,15 +22,12 @@ export default async function About(props: { searchParams: SearchParams }) {
   // add processing for these and pagination
   // const query = '';
   // const currentPage = 1;
+  const title = "About";
+  const description = "What do you want to know about?";
   return (
-    <main>
-      <Header pageTitle="About" />
+    <TitledPage title={title} description={description} backButton={true}>
       <div>
-        <div className="flex justify-center">
-          <p className="text-2xl">What do you want to know about?</p>
-        </div>
         <br />
-        {/* if no placeholder from url params, use "Search" */}
         <div className="flex justify-center">
           <Search placeholder="Search" />
         </div>
@@ -50,6 +48,6 @@ export default async function About(props: { searchParams: SearchParams }) {
           <></>
         )}
       </div>
-    </main>
+    </TitledPage>
   );
 }

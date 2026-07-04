@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Header } from "@/app/ui/common";
 import {
   fetchDevlogs,
   createOrEditDevlog,
@@ -7,14 +6,15 @@ import {
 import { dateToString } from "@/app/lib/utils";
 import { DevlogDocument } from "@/app/lib/definitions";
 import localFont from "next/font/local";
+import { TitledPage } from "../ui/titledpage";
 const Hack = localFont({ src: "../fonts/Hack-Regular.ttf" });
 
-export default async function Devlogs() {
+export default async function Page() {
+  const title = "Devlogs";
   // todo check suspense, proper way of await
   const devLogs = await fetchDevlogs();
   return (
-    <main>
-      <Header pageTitle="Devlogs" />
+    <TitledPage title={title} backButton={true}>
       <div className="flex flex-col items-center justify-center">
         {/*<button onClick={createOrEditDevlog}>Jit</button>*/}
         {/*todo sort by date, add limit*/}
@@ -28,6 +28,6 @@ export default async function Devlogs() {
           </Link>
         ))}
       </div>
-    </main>
+    </TitledPage>
   );
 }

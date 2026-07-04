@@ -6,14 +6,14 @@ import BackPageButton from "@/app/ui/client/backpagebutton";
  * @param pageTitle The title of the page.
  * @constructor
  */
-export function Header({ pageTitle }: { pageTitle: string }) {
-  return (
-    <div className="flex justify-center space-x-2">
-      <BackPageButton/>
-      <p className="md:text-3xl text-center">{pageTitle}</p>
-    </div>
-  );
-}
+// export function Header({ pageTitle }: { pageTitle: string }) {
+//   return (
+//     <div className="flex justify-center space-x-2">
+//       <BackPageButton/>
+//       <p className="md:text-3xl text-center">{pageTitle}</p>
+//     </div>
+//   );
+// }
 
 export const buttonTypes = {
   default: "bg-[#3c3e45] rounded-lg border-2",
