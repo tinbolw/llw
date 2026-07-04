@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { AboutPage } from "@/app/ui/about/aboutpage";
 import { AboutPageSkeleton } from "@/app/ui/skeletons";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import Spinner from "@/app/ui/components/spinner";
 
 // /[id]/edit lets you edit specific, /create lets you add new, add checkbox for custom time or date.now
 type Params = Promise<{ id: string }>;
@@ -20,7 +21,13 @@ export default async function Page(props: { params: Params }) {
         <p className="md:text-3xl text-center">About</p>
       </div>
       <div className="text-center">
-        <Suspense fallback={<AboutPageSkeleton />}>
+        <Suspense
+          fallback={
+            <div className="flex flex-col items-center w-full">
+              <Spinner />
+            </div>
+          }
+        >
           <AboutPage params={{ id: id }} />
         </Suspense>
       </div>

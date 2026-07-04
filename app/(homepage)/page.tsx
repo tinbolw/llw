@@ -6,12 +6,12 @@ export default function Home() {
   const description = "Welcome to the Ling Ling Website.";
   return (
     <TitledPage title={title} description={description}>
-      <div className="flex justify-around items-start">
-        <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-row w-full">
+        <div className="flex flex-col items-center w-1/2">
           <h1 className="text-2xl">You can:</h1>
           <ul className="underline text-xl flex flex-col items-center justify-center">
             <li>
-              <Link href="/about">Read some Abouts</Link>
+              <Link href="/about">Learn About Ling Ling</Link>
             </li>
             <li>
               <Link href="/jit/jitbot">Talk to Jitbot</Link>
@@ -24,7 +24,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center w-1/2">
           <h1 className="text-2xl animate-bounce">Coming in the Future:</h1>
           <ul className="text-xl flex flex-col items-center justify-center">
             <li>Server Statistics</li>

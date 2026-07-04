@@ -20,8 +20,8 @@ export function TitledPage({
           <p className="md:text-3xl text-center">{title}</p>
         </div>
         {description && <p className="text-center">{description}</p>}
+        {children}
       </div>
-      {children}
     </main>
   );
 }

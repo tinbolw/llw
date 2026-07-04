@@ -1,7 +1,7 @@
 import { TitledPage } from "@/app/ui/titledpage";
 import Link from "next/link";
 
-export default async function Page() {
+export default function Page() {
   const title = "Jit";
   const description = "Definitions soon...";
   return (
