@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { auth } from "@/auth";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
 import { TitledPage } from "@/app/ui/titledpage";
@@ -13,7 +12,7 @@ import { buttonTypes } from "@/app/ui/common";
 // todo it seems as if page loading itself depends on the fetch, which is what suspense is supposed to prevent, look into this
 // todo instead of making the entire page itself await the props, load rest of the site and suspense the cards
 type SearchParams = Promise<{ query?: string; page?: string }>;
-export default async function About(props: { searchParams: SearchParams }) {
+export default async function Page(props: { searchParams: SearchParams }) {
   const searchParams = await props.searchParams;
   // todo fix revalidations for /about
   // revalidatePath('/about');

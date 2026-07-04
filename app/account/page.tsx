@@ -1,3 +1,4 @@
+import "server-only";
 import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { isAuthorized } from "@/app/lib/session";
