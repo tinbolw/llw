@@ -17,7 +17,7 @@
     "better-auth": "^1.6.23",
     "child_process": "^1.0.2",
     "ioredis": "^5.11.1",
-    "mongodb": "^7.4.0",
+    "mongodb": "^7.5.0",
     "net": "^1.0.2",
     "next": "16.2.10",
     "react": "^19.2.7",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.2",
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
