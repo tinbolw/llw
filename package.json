@@ -14,7 +14,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "bcrypt": "^6.0.0",
-    "better-auth": "^1.6.26",
+    "better-auth": "^1.6.27",
     "child_process": "^1.0.2",
     "ioredis": "^6.0.0",
     "mongodb": "^7.5.0",
